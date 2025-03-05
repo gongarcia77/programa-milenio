@@ -1,0 +1,8 @@
+{
+  "name": "programa-milenio-checkout",
+  "version": "1.0.0",
+  "description": "Sistema de checkout para Programa Milenio",
+  "dependencies": {
+    "stripe": "^12.0.0"
+  }
+}

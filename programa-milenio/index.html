@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Administrador de Pagos - Programa Milenio&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8f9fa;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 20px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #eee;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2c3e50;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #3498db;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #3498db;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #3498db;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#paymentLink {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>word-break: break-all;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hidden {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#linkContainer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f0f7ff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="text-center"&gt;Configuración de Pago - Programa Milenio&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;form id="paymentForm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;Información del Programa&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="programName" class="form-label"&gt;Nombre del Programa&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" class="form-control" id="programName" value="Programa Milenio" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="basePrice" class="form-label"&gt;Precio Base (€)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" class="form-control" id="basePrice" min="0" step="0.01" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;Descuentos&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="form-label"&gt;Tipo de Descuento&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="form-check"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input class="form-check-input" type="radio" name="discountType" id="discountPercentage" value="percentage" checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="form-check-label" for="discountPercentage"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Porcentaje (%)</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="form-check"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input class="form-check-input" type="radio" name="discountType" id="discountAmount" value="amount"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="form-check-label" for="discountAmount"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Cantidad fija (€)</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="discountValue" class="form-label"&gt;Valor del Descuento&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" class="form-control" id="discountValue" min="0" step="0.01" value="0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="discountReason" class="form-label"&gt;Motivo del Descuento&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" class="form-control" id="discountReason"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="discountExpiration" class="form-label"&gt;Fecha Límite del Descuento&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="date" class="form-control" id="discountExpiration"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;Plan de Pago&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="finalPrice" class="form-label"&gt;Importe Total a Pagar (€)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" class="form-control" id="finalPrice" readonly&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="form-label"&gt;Tipo de Financiación&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="form-check"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input class="form-check-input" type="radio" name="paymentType" id="equalInstallments" value="equal" checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="form-check-label" for="equalInstallments"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Cuotas iguales</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="form-check"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input class="form-check-input" type="radio" name="paymentType" id="enrollmentPlusInstallments" value="enrollment"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="form-check-label" for="enrollmentPlusInstallments"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Matrícula + cuotas mensuales</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="installmentsCount" class="form-label"&gt;Número de Cuotas&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" class="form-control" id="installmentsCount" min="1" value="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="enrollmentSection" class="mb-3 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="enrollmentFee" class="form-label"&gt;Importe Matrícula (€)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" class="form-control" id="enrollmentFee" min="0" step="0.01" value="0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="monthlyFee" class="form-label"&gt;Importe Cuotas Mensuales (€)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" class="form-control" id="monthlyFee" readonly&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;Información del Alumno&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="studentName" class="form-label"&gt;Nombre del Alumno&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" class="form-control" id="studentName" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="studentEmail" class="form-label"&gt;Email del Alumno&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="email" class="form-control" id="studentEmail" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="d-grid gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="submit" class="btn btn-primary btn-lg"&gt;Generar Enlace de Pago&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/form&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="linkContainer" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Enlace de Pago Generado&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Comparte este enlace con el alumno para procesar el pago:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="alert alert-success" id="paymentLink"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="d-grid gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="copyLink" class="btn btn-outline-primary"&gt;Copiar Enlace&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="resetForm" class="btn btn-outline-secondary"&gt;Crear Nuevo Enlace&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://js.stripe.com/v3/"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Variables para elementos del formulario</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const form = document.getElementById('paymentForm');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const basePrice = document.getElementById('basePrice');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const discountType = document.getElementsByName('discountType');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const discountValue = document.getElementById('discountValue');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const finalPrice = document.getElementById('finalPrice');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const paymentType = document.getElementsByName('paymentType');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const installmentsCount = document.getElementById('installmentsCount');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const enrollmentSection = document.getElementById('enrollmentSection');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const enrollmentFee = document.getElementById('enrollmentFee');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const monthlyFee = document.getElementById('monthlyFee');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const linkContainer = document.getElementById('linkContainer');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const paymentLink = document.getElementById('paymentLink');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const copyLinkBtn = document.getElementById('copyLink');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const resetFormBtn = document.getElementById('resetForm');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Evento para calcular el precio final al cambiar los valores</p>
+<p class="p1"><span class="Apple-converted-space">            </span>[basePrice, discountValue, ...discountType, ...paymentType, installmentsCount, enrollmentFee].forEach(element =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>element.addEventListener('change', calculateFinalPrice);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (element.type === 'number') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>element.addEventListener('input', calculateFinalPrice);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Mostrar/ocultar sección de matrícula según el tipo de financiación</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('equalInstallments').addEventListener('change', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>enrollmentSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>enrollmentFee.value = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>calculateFinalPrice();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('enrollmentPlusInstallments').addEventListener('change', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>enrollmentSection.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>calculateFinalPrice();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Función para calcular el precio final y las cuotas</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function calculateFinalPrice() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Obtener precio base</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const basePriceValue = parseFloat(basePrice.value) || 0;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Calcular descuento</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let discountAmount = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const discountTypeValue = document.querySelector('input[name="discountType"]:checked').value;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const discountValueAmount = parseFloat(discountValue.value) || 0;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (discountTypeValue === 'percentage') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>discountAmount = basePriceValue * (discountValueAmount / 100);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>discountAmount = discountValueAmount;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Calcular precio final</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const finalPriceValue = Math.max(0, basePriceValue - discountAmount);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>finalPrice.value = finalPriceValue.toFixed(2);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Calcular cuotas</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const paymentTypeValue = document.querySelector('input[name="paymentType"]:checked').value;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const installmentsCountValue = parseInt(installmentsCount.value) || 1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const enrollmentFeeValue = parseFloat(enrollmentFee.value) || 0;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (paymentTypeValue === 'equal') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Cuotas iguales</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const monthlyFeeValue = finalPriceValue / installmentsCountValue;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>monthlyFee.value = monthlyFeeValue.toFixed(2);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Matrícula + cuotas</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const remainingAmount = Math.max(0, finalPriceValue - enrollmentFeeValue);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const monthlyFeeValue = remainingAmount / installmentsCountValue;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>monthlyFee.value = monthlyFeeValue.toFixed(2);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Evento para enviar el formulario y generar el enlace</p>
+<p class="p1"><span class="Apple-converted-space">            </span>form.addEventListener('submit', function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Recopilar todos los datos del formulario</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const formData = {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>programName: document.getElementById('programName').value,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>basePrice: parseFloat(basePrice.value),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>discountType: document.querySelector('input[name="discountType"]:checked').value,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>discountValue: parseFloat(discountValue.value) || 0,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>discountReason: document.getElementById('discountReason').value,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>discountExpiration: document.getElementById('discountExpiration').value,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>finalPrice: parseFloat(finalPrice.value),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>paymentType: document.querySelector('input[name="paymentType"]:checked').value,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>installmentsCount: parseInt(installmentsCount.value),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>enrollmentFee: parseFloat(enrollmentFee.value) || 0,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>monthlyFee: parseFloat(monthlyFee.value),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>studentName: document.getElementById('studentName').value,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>studentEmail: document.getElementById('studentEmail').value</p>
+<p class="p1"><span class="Apple-converted-space">                </span>};</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Mostrar mensaje de carga</p>
+<p class="p1"><span class="Apple-converted-space">                </span>paymentLink.textContent = "Generando enlace de pago...";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>linkContainer.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>form.classList.add('hidden');</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Enviar los datos al servidor</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fetch('/.netlify/functions/create-checkout', {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>method: 'POST',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>headers: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Content-Type': 'application/json',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>body: JSON.stringify(formData),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>})</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.then(response =&gt; response.json())</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.then(data =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (data.url) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// Mostrar el enlace generado por Stripe</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>paymentLink.textContent = data.url;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// Mostrar error</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>paymentLink.textContent = "Error al generar el enlace: " + (data.error || "Error desconocido");</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>paymentLink.classList.remove('alert-success');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>paymentLink.classList.add('alert-danger');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>})</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.catch(error =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>console.error('Error:', error);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>paymentLink.textContent = "Error al conectar con el servidor: " + error.message;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>paymentLink.classList.remove('alert-success');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>paymentLink.classList.add('alert-danger');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Copiar enlace al portapapeles</p>
+<p class="p1"><span class="Apple-converted-space">            </span>copyLinkBtn.addEventListener('click', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>navigator.clipboard.writeText(paymentLink.textContent)</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.then(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>copyLinkBtn.textContent = '¡Enlace Copiado!';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>copyLinkBtn.textContent = 'Copiar Enlace';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}, 2000);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Reiniciar formulario</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resetFormBtn.addEventListener('click', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>form.reset();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>form.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>linkContainer.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>calculateFinalPrice();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Inicializar cálculos</p>
+<p class="p1"><span class="Apple-converted-space">            </span>calculateFinalPrice();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
